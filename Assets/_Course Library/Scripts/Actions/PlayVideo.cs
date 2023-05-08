@@ -27,8 +27,10 @@ public class PlayVideo : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         videoPlayer = GetComponent<VideoPlayer>();
 
+        index = Random.Range(0, videoClips.Count); //yoinked
         if (videoClips.Count > 0)
-            videoPlayer.clip = videoClips[0];
+            //videoPlayer.clip = videoClips[0];
+            videoPlayer.clip = videoClips[index];
     }
 
     private void OnEnable()
@@ -45,14 +47,35 @@ public class PlayVideo : MonoBehaviour
     {
         if (playAtStart)
         {
-            Play();
+            //copied fr random clip thing
+            //Play();
+            //RandomClip();
+            InvokeRepeating("OWO", 2.0f, 0.3f); 
         }
         else
         {
             Stop();
         }
     }
-
+    public void OWO(){
+        if(!videoPlayer.isPlaying){ 
+            if (videoClips.Count > 0){
+                index = Random.Range(0, videoClips.Count); //yoinked
+                videoPlayer.clip = videoClips[index];
+            } 
+            Play();
+        }
+    }
+    // private void Update(){
+    //     if(!videoPlayer.isPlaying){ 
+    //         if (videoClips.Count > 0){
+    //             //videoPlayer.clip = videoClips[0];
+    //             index = Random.Range(0, videoClips.Count); //yoinked
+    //             videoPlayer.clip = videoClips[index];
+    //         } 
+    //         Play();
+    //     }
+    // }
     public void NextClip()
     {
         index = ++index % videoClips.Count;
