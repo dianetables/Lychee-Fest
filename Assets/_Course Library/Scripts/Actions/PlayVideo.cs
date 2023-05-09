@@ -45,17 +45,19 @@ public class PlayVideo : MonoBehaviour
 
     private void Start()
     {
-        if (playAtStart)
-        {
-            //copied fr random clip thing
-            //Play();
-            //RandomClip();
-            InvokeRepeating("OWO", 2.0f, 0.3f); 
-        }
-        else
-        {
-            Stop();
-        }
+        InvokeRepeating("OWO", 2.0f, 0.3f); 
+        // if (playAtStart)
+        // {
+        //     //copied fr random clip thing
+        //     //Play();
+        //     //RandomClip();
+        //     InvokeRepeating("OWO", 2.0f, 0.3f); 
+        // }
+        // else
+        // {
+        //     Stop();
+        // }
+        
     }
     public void OWO(){
         if(!videoPlayer.isPlaying){ 
