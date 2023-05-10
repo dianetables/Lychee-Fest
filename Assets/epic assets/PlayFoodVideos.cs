@@ -22,5 +22,11 @@ public class PlayFoodVideos : MonoBehaviour
             videoPlayer.SetActive(true);
         }
     }
+    void OnTriggerExit(Collider player){
+        if(player.gameObject.tag == "Player")
+        {
+            videoPlayer.SetActive(false);
+        }
+    }
     
 }
