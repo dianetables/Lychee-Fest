@@ -68,6 +68,27 @@ public class PlayVideo : MonoBehaviour
             Play();
         }
     }
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     foreach (ContactPoint contact in collision.contacts)
+    //     {
+    //         Debug.DrawRay(contact.point, contact.normal, Color.white);
+    //     }
+    //     if (collision.relativeVelocity.magnitude > 2)
+    //         Play();
+    // }
+    private void OnTriggerEnter(Collider other)
+    {
+        //speed = speed * -1;
+        Play();
+    }
+    void OnTriggerExit(Collider other)
+    {
+        // Destroy everything that leaves the trigger
+        //Destroy(other.gameObject);
+        Stop();
+    }
+
     // private void Update(){
     //     if(!videoPlayer.isPlaying){ 
     //         if (videoClips.Count > 0){

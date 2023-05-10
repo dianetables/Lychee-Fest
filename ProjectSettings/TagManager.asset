@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - can
+  - tv
   layers:
   - Default
   - TransparentFX
