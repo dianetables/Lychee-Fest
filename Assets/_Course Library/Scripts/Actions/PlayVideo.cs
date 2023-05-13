@@ -45,6 +45,7 @@ public class PlayVideo : MonoBehaviour
 
     private void Start()
     {
+        Play();
         InvokeRepeating("OWO", 2.0f, 0.3f); 
         // if (playAtStart)
         // {
